@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animate.css</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/codemirror.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="assets/js/less.min.js"></script>
+  </head>
+  <body>
+    <h1>Animate.css Demo</h1>
+    <h3><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a></h3>
+    
+    <h2>Hover - pulse</h2>
+    <section id="example-1" class="container row">
+      <div class="col-xs-6">
+        <div class="book">
+        	<img src="assets/imgs/books/screwtape-letters.jpg" alt="Screw Tape Letters">
+        	<div>Screw Tape Letters - C.S. Lewis</div>
+        </div>
+        <div class="book">
+        	<img src="assets/imgs/books/atlas-shrugged.jpg" alt="Atlas Shrugged">
+        	<div>Atlash Shrugged - Ayn Rand</div>
+        </div>
+        <div class="book">
+        	<img src="assets/imgs/books/the-great-gatsby.jpg" alt="The Great Gatsby">
+        	<div>The Great Gatsby - F. Scott Fitsgerald</div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <textarea id="example-1-code">
+  $("#example-1 .book").hover(function(){
+    $(this).addClass('pulse animated');
+   },function() {
+    $(this).removeClass('pulse animated');
+  });
+	</textarea>
+      </div>
+    </section>
+
+    <h2>Image Viewer - fadeIn fadOut</h2>
+    <section id="example-2" class="container row">
+      <div class="col-xs-6">
+        <div class="images">
+          <img src="assets/imgs/camera/image-1.jpg" data-img="image-1" alt="Image 1" class="visible">
+          <img src="assets/imgs/camera/image-2.jpg" data-img="image-2" alt="Image 2">
+          <img src="assets/imgs/camera/image-3.jpg" data-img="image-3" alt="Image 3">
+          <img src="assets/imgs/camera/image-4.jpg" data-img="image-4" alt="Image 4">
+        </div>
+        <div class="thumbs">
+          <img src="assets/imgs/camera/thumb-1.jpg" alt="Thumb 1" data-img="image-1">
+          <img src="assets/imgs/camera/thumb-2.jpg" alt="Thumb 2" data-img="image-2">
+          <img src="assets/imgs/camera/thumb-3.jpg" alt="Thumb 3" data-img="image-3">
+          <img src="assets/imgs/camera/thumb-4.jpg" alt="Thumb 4" data-img="image-4">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <textarea id="example-2-code">
+  //find the right image to fade.
+  var image = $(this).attr('data-img');
+
+  $('#example-2 .images').find('img.visible')
+               //This is the transition out
+              .addClass("fadeOut animated");
+
+  //Wait for the fadeOut to finish then fadeIn
+  setTimeout(function() {
+    $('#example-2 .images').find('.visible')
+
+    //Clear the animation CSS classes.
+    .removeClass('fadeOut fadeIn animated visible').end()
+
+    //Find the img thumb that was clicked
+    .find('img[data-img="'+image+'"]')
+                 //This is the transition in
+                .addClass("fadeIn animated visible");
+  }, 500);
+	</textarea>
+      </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/codemirror.js"></script>
+    <script src="assets/js/mode/javascript.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

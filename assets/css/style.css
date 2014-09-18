@@ -1,0 +1,69 @@
+body {
+  margin-bottom: 20px;
+}
+#example-2, h1, h3{
+  text-align: center;
+}
+h2 {
+  color: #888888;
+  margin-top: 60px;
+  padding-left: 20px;
+}
+
+section > div:first-of-type {
+  border-right: 1px solid #CCC;
+}
+
+#example-1 > div:first-of-type {
+  height: 300px;
+}
+
+#example-1 .book {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#example-1 .book 
+img {
+  width: 100px;
+}
+
+#example-1 .book > div {
+  width: 140px;
+}
+
+#example-1 .book:hover > div {
+  text-decoration: underline;
+}
+.CodeMirror {
+  text-align: left;
+}
+
+#example-2 > div:last-of-type {
+  margin-top: 50px;
+}
+
+#example-2 .images
+img:not(.visible) {
+  display: none;
+}
+
+#example-2 .images {
+  display: inline-block;
+  width: 300px;
+}
+#example-2 .images
+img {
+  width: 100%;
+  height: auto;
+}
+
+#example-2 .thumbs
+img {
+  cursor: pointer;
+  border: 1px solid #CCC;
+}
